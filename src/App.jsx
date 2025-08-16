@@ -5,7 +5,9 @@ import './styles/index.css';
 function App() {
   return (
     
-    ButtonsMain()
+    <div>
+      <ButtonsMain />
+    </div>
   
   )
 }
