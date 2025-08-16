@@ -1,0 +1,306 @@
+@import '../assets/fonts/fonts.css';
+
+  /* Terminal Window */
+/* Terminal Window Container */
+.terminal-window {
+  width: 500px; 
+  height: 400px;
+
+  background-color: #0d0d0d;
+  color: #33ff33;
+  border: 2px solid #33ff33;
+  box-shadow: 0 0 10px #33ff33aa;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+ 
+
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+
+}
+
+  /* Terminal Title Bar */
+  .terminal-window .title-bar {
+    background-color: #222;
+    color: rgb(79, 250, 123);
+    font-weight: bold;
+    padding: 6px 10px;
+    border-bottom: 1px solid #33ff33;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Terminal Window Body (content area) */
+  .terminal-window .window-body {
+    padding: 12px;
+    font-size: 18px;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    flex-grow: 1;
+    font-family: 'Terminus';
+  }
+
+
+  .terminal-prompt {
+    margin-right: 0.5ch;
+    user-select: text;          /* Allow user to select the prompt */
+  }
+
+  .terminal-line {
+  line-height: 1.1; /* or even 1.8 */
+  padding-left: 10px;
+  color: #8bfd7f;
+  }
+
+  /* Blinking Cursor */
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 5px;
+    height: 16px;
+    background-color: #33ff33;
+    margin-left: 4px;
+    animation: blink 1s steps(2, start) infinite;
+    vertical-align: bottom;
+  }
+
+  /* Terminal input styling if you have input fields */
+  .terminal-window input {
+    background: transparent;
+    border: none;
+    color: #33ff33;
+    font-family: monospace;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+  }
+
+
+
+
+
+/* Email window container */
+.email-window {
+  background: #fcfefd;
+  border: 3px solid #e0e0de;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  padding-bottom: 6px;
+
+}
+
+.email-window .title-bar {
+  background: #e0e0de; 
+  color: #3c3c3a; 
+  gap: 10px; 
+  padding: 8px 12px; 
+
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+
+  flex: 0 0 auto;
+
+}
+
+/* Top bar with icons (moved to right) */
+.email-window .title-bar-send {
+  background: #e0e0de;
+  color: rgb(60, 60, 58);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: flex;
+  justify-content: flex-end; /* moved icons to the right */
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  height: 10px;
+}
+
+/* Faux macOS-style traffic light icons */
+.email-window .title-bar-icons {
+  /* content: "● ● ●"; */
+  margin-left: 8px;
+  cursor: default;
+  padding: 0.05px;
+
+  color: rgb(167, 167, 165);
+
+  transition: transform 0.2s ease;
+}
+
+  .email-window .title-bar-icons:hover{
+    /* Subtle effect on hover/focus */
+    transform: scale(1.1);
+    
+  }
+
+  .title-bar-icons-container {
+    display: flex;
+    gap: 0.01px; /* space between the dots */
+  }
+
+
+/* Email header info (To, From, Subject) */
+.email-window-top {
+  color: #3c3c3a;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 10px;
+  padding: 10px 15px;
+  line-height: 1.4;
+  height: auto; 
+  background: #fcfefd;
+  border-bottom: 1px solid #e0e0de;
+}
+
+/* To/From/Subject text */
+.email-window .title-bar-text {
+  color: rgb(60, 60, 58, 0.7);
+  font-size: 12px;
+  text-align: left;
+  margin: 0;
+}
+
+.email-window .title-bar-date {
+  color: rgb(60, 60, 58, 0.4);
+  font-size: 10px;
+  text-align: right;
+  margin: 0;
+  white-space: nowrap;
+
+}
+
+/* Email body */
+.email-window-email {
+  color: #3c3c3a;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px;
+  padding: 10px 25px;
+  line-height: 1.3;
+}
+
+  .email-window-email h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .email-window-email h2 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .email-window-email h3 {
+      font-size: 10px;
+      font-weight: normal;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+  .email-window-email ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .email-window-email li {
+    margin-bottom: 8px;
+  }
+
+
+
+
+
+
+
+
+/* Contact Window */
+.chrome-window {
+  background: #e6f7ff;
+  color: #1a1a1a;
+}
+
+  .chrome-window .title-bar {
+    background: #cceeff;
+    color: #1a1a1a;
+  }
+
+.chrome-search-tab {
+  background: #bee4f6b3;
+  border-radius: 100px;
+  /* padding: 8px 12px; */
+  width: 300px; 
+  height: 20px;
+  display: flex;
+  /* justify-content: left; */
+
+  position: relative;       
+  top: 60px;  
+  left: 85px;
+
+}
+
+  .chrome-search-word {
+    color: rgb(34, 34, 34, 0.9);
+    position: relative;       
+    font-family: "Rainbow";
+    font-size: 13px;
+    top: 2px;
+    left: 10px;
+  }
+
+
+
+
+/* Funzies Window */
+.funzies-window {
+  background: #ffe6f0;
+  font-family: 'Comic Sans MS', cursive;
+  color: #d81b60;
+}
+
+  .funzies-window .title-bar {
+    background: #ffc1de;
+    color: #d81b60;
+  }
+
+/* Default fallback */
+.default-window {
+  background: white;
+  color: black;
+}
+
+
+/* for skills window */
+
+/* 
+.skills {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fff2f9;
+  color: #3c2d2d;
+  font-size: 14px;
+  align-content: center;
+
+  transition: transform 150ms ease 0s;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3); 
+
+            
+}
+
+  .skills:hover {
+    /* background-color: pink;     
+    transform: scale(1.05);       
+    cursor: default;
+
+  } */
+
+

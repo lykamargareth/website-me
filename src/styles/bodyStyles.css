@@ -1,0 +1,60 @@
+@import '../assets/fonts/fonts.css';
+
+
+/* body {
+  background: rgb(240, 235, 215);
+  color: hsl(331, 100%, 50%);
+  max-width: 400px;
+  padding: 2rem;
+  margin: 0 auto;
+
+  /* cursor: url('./src/assets/pink-cursor.png'), auto; } */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 30;
+  cursor: default;
+}
+
+body {
+  background: 
+  linear-gradient(120deg, #79a9d1, #f5b7a2, #e49fcf),
+  linear-gradient(60deg, #f0c9ff, #a0d4ff, #ffd4a5);
+  background-size: 400% 400%;
+  animation: layeredSky 25s ease-in-out infinite;
+}
+
+@keyframes layeredSky {
+  0%   { background-position: 0% 0%, 0% 100%; }
+  50%  { background-position: 100% 100%, 100% 0%; }
+  100% { background-position: 0% 0%, 0% 100%; }
+}
+
+.content {
+  font-family: 'vividly';
+  padding: 2px;
+}
+
+.chrome-name {
+  font-family: 'Rainbow';
+  font-size: 70px !important;
+  text-align: center;
+  position: relative;
+  top: 45px;
+  margin: 0 auto;
+  display: block;
+  color: #35281E;
+
+}
+
+.under-hover {
+  transition: transform 100ms ease 0s;
+}
+
+.under-hover:hover {
+  transform: scale(1.01);
+  text-decoration: underline;
+  
+}
