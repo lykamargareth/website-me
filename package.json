@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://lykamargareth.github.io/website-me",
+  "homepage": "https://lykamargareth.github.io/website-me/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
