@@ -1,42 +1,38 @@
 @import '../assets/fonts/fonts.css';
 
-
-/* window buttons */
-
-/* to open */
-/* Container holding the buttons side by side */
+/**** BUTTONS FOR DOCK (TO OPEN) ****/
 .button-row {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-top: 30px;
 
-  position: fixed;       /* Fix position relative to viewport */
-  bottom: 40px;          /* Distance from the bottom */
-  left: 50%;             /* Position from left at 50% */
-  transform: translateX(-50%);  /* Shift left by half its width to center */
+  position: fixed;     
+  bottom: 40px;       
+  left: 50%;             
+  transform: translateX(-50%);  
 }
 
-/* Base button styles */
 .button-general {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  font-family: 'animalCross';
-  font-size: 20px;
-  padding: 10px 20px;
-  box-sizing: border-box;
 
   background-color: pink;
   color: rgb(60, 45, 45);
-  border: 2px solid black;
 
+  font-family: 'animalCross';
+  font-size: 20px;
+
+  padding: 10px 20px;
+  min-width: 80px;
+
+  border: 2px solid black;
   border-radius: 150px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
   flex: 1;
-  min-width: 80px;
+  box-sizing: border-box;
   white-space: nowrap;
   overflow: visible;
 
@@ -47,112 +43,97 @@
     filter 300ms ease;
 }
 
-/* When any button is hovered, slightly shrink all others */
-.button-row:hover .button-general:not(:hover) {
+  .button-general:hover {
+    flex-grow: 2;
+    transform: scale(1.001);
+    filter: brightness(1.1);
+    z-index: 1;
+    cursor: default;
+  }
+
+  .button-row:hover .button-general:not(:hover) {
   flex-grow: 1;
   transform: scale(0.98);
   filter: brightness(0.95);
 }
 
-/* The actual hovered button grows + pops */
-.button-general:hover {
-  flex-grow: 2;
-  transform: scale(1.001);
-  filter: brightness(1.1);
-  z-index: 1;
-  cursor: default;
-}
 
 
-
-/* to close */
+/**** BUTTON TO CLOSE WINDOW ****/
 .close-button {
+  justify-content: center;
+ 
   font-family: 'glitchy';
 
   background-color: red;
   color: white;
-  border: none;
-  border-radius: 4px;
-  justify-content: center;
+
   padding-top: 2.3px;
   padding-bottom: 2.7px;
   padding-right: 7px;
   padding-left: 6.4px;
 
-  transition: transform 150ms ease 0s;
+  border-radius: 4px;
 
-  /* cursor: pointer; */
+  border: none;
+
+  transition: transform 150ms ease 0s;
 }
 
     .close-button:hover {
     background-color: rgb(255, 0, 0);       
     transform: scale(1.1);       
-    cursor: default;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
-
+    cursor: default;
     }
 
 
 
-/* for skills window */
-
+/**** SKILLS WINDOW ****/
 .terminal-command-button {
-  background: transparent;
-  font-size: 20px;
-  border: none;
-  color: rgb(79, 250, 123);              /* Classic green terminal text */
-  font-family: 'Terminus';
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
   align-items: center;
+  display: flex;
+
+  background: transparent;
+  color: rgb(79, 250, 123);   
+
+  font-family: 'Terminus';
+  font-size: 16px;
+
+  border: none;
   padding: 0;
+
   user-select: none;
   outline: none; 
+  cursor: pointer;
 }
 
-/* .terminal-command-button:hover,
-.terminal-command-button:focus {
-  transform: scale(1.01);
-  text-decoration: underline;
-  
-} */
-
-
-
+/**** CHROME WINDOW ****/
 .chrome-row-button {
-  display: flex;
-  gap: 25px;
   justify-content: center;
-
+  display: flex;
   position: relative;       
-  top: 80px;          
 
+  top: 80px;          
+  gap: 25px;
 }
 
 .chrome-button {
   font-family: 'Rainbow';
   font-size: 15px;
   padding: 10px;
-  background-color: pink;
-  color: rgb(60, 45, 45);
+
+  background: #ffc1de;
+  color: #1a1a1a;
+  
+  border-radius: 16px; 
   border: 1px solid rgb(245, 147, 201);
-  border-radius: 50px; 
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 
   transition: transform 100ms ease 0s;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.3); 
-
 }
 
     .chrome-button:hover {
-    transform: scale(1.02);       /* Slightly enlarges the box for a “pop” effect */
-    cursor: default;
+    transform: scale(1.02);     
     filter: brightness(1.03)
-
-    }
-
-    .chrome-button.active.active {
-    background-color: #fb9bc3;
-    color: #010101;
-    border-color: #fd93c4;
     }
