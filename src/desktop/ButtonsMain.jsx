@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { AboutMe, Skills, Contact, Funzies } from './windows';
-import { default as DragWindows } from './dragWindows';
+import { AboutMe, Skills, Contact, Funzies, DragWindows } from '../index';
 
 
-
-function ButtonsMain () {
-    const [windows, setWindows] = useState([]); 
+function ButtonsMain({ windows, setWindows }) {
     const [topZ, setTopZ] = useState(5);
 
 
@@ -16,14 +13,16 @@ function ButtonsMain () {
         win4: { title: 'Funzies', component: Funzies, type: 'funzies' }
     };
 
-    function getRandomPos ( windowWidth = 500 , windowHeight = 400 ) {
 
-        const padding = 10;
-        const maxX = window.innerWidth - windowWidth - padding;
-        const maxY = window.innerHeight - windowHeight - padding;
+    function getRandomPos(windowWidth = 500, windowHeight = 400, topPadding = 150, sidePadding = 10) {
+        const buttonRow = document.querySelector('.button-row');
+        const buttonRowHeight = buttonRow ? buttonRow.offsetHeight : 60;
 
-        const x = Math.floor(Math.random() * (maxX - padding + 1)) + padding;
-        const y = Math.floor(Math.random() * (maxY - padding + 1)) + padding;
+        const maxX = window.innerWidth - windowWidth - sidePadding;
+        const maxY = window.innerHeight - windowHeight - buttonRowHeight - topPadding;
+
+        const x = Math.floor(Math.random() * (maxX - sidePadding + 1)) + sidePadding;
+        const y = Math.floor(Math.random() * (maxY - topPadding + 1)) + 150;
 
         return { x, y };
     }

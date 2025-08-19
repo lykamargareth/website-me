@@ -1,15 +1,22 @@
-import ButtonsMain from './mainButtons';
+import { useState } from 'react';
+import { ButtonsMain , MenuBar , Title } from './index';
 
-import './styles/index.css';
+import './index.css';
 
 function App() {
+  const [windows, setWindows] = useState([]);
+
+  function closeAllWindows() {
+    setWindows([]); // clears all
+  }
+
   return (
-    
     <div>
-      <ButtonsMain />
+      <MenuBar onAppleClick={closeAllWindows} />
+      <Title />
+      <ButtonsMain windows={windows} setWindows={setWindows} />
     </div>
-  
-  )
+  );
 }
 
 export default App;

@@ -21,7 +21,8 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
     <Draggable 
       handle=".title-bar" 
       nodeRef={nodeRef} 
-      position={position}              // controlled position
+      position={position} 
+      // defaultPosition={position}           
       onDrag={(e, data) => {
         void e; // i dont need this e shit
         setPosition({ x: data.x, y: data.y });
@@ -34,7 +35,7 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
         onMouseDown={bringToFront}
         style= {{ 
         zIndex: win.zIndex || 1  , 
-
+        zIndex: win.zIndex || 1,
         }}
       >
         <div className="title-bar">

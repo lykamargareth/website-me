@@ -1,15 +1,24 @@
 @import '../assets/fonts/fonts.css';
 
 html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   cursor: default;
 }
 
+/* body {
+  background: linear-gradient(120deg, #c8d9e6, #f5efe8);
+  background-size: 200% 200%;
+  animation: skySand 25s ease-in-out infinite;
+} */
+
+
 body {
   background: 
-  linear-gradient(120deg, #79a9d1, #f5b7a2, #e49fcf),
-  linear-gradient(60deg, #f0c9ff, #a0d4ff, #ffd4a5);
+  linear-gradient(120deg, #c8d9e6, #f5efe8, #ffffff),
+  linear-gradient(60deg, #c8d9e6, #f5efe8, #ffffff);
 
   background-size: 400% 400%;
   animation: layeredSky 25s ease-in-out infinite;
