@@ -51,3 +51,5 @@ thumb/
 
 # Others
 *.swp
+
+/dist/
