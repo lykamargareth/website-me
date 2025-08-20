@@ -1,6 +1,12 @@
 import { useState } from 'react';
+<<<<<<< Updated upstream
 import { ButtonsMain , MenuBar , Title } from './index';
 
+=======
+import { ButtonsMain , MenuBar , Title, Background } from './index';
+
+import './assets/fonts/fonts.css';
+>>>>>>> Stashed changes
 import './index.css';
 
 function App() {
@@ -12,6 +18,10 @@ function App() {
 
   return (
     <div>
+<<<<<<< Updated upstream
+=======
+      <Background />
+>>>>>>> Stashed changes
       <MenuBar onAppleClick={closeAllWindows} />
       <Title />
       <ButtonsMain windows={windows} setWindows={setWindows} />
