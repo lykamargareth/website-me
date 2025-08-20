@@ -52,4 +52,5 @@ thumb/
 # Others
 *.swp
 
-/dist/
+# Build output
+dist/
