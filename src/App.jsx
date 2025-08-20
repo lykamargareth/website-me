@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { ButtonsMain , MenuBar , Title, Background } from './index';
 
 import './assets/fonts/fonts.css';
