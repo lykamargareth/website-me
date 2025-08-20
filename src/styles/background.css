@@ -12,37 +12,63 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 300%;          /* double width for looping */
+  width: 200%;        
   height: 100%;
   background-repeat: repeat-x;
-  background-size: cover; /* fills full height */
+  /* background-size: cover; */
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
+ 
+  background-repeat: repeat-x;    
+  background-size: auto 100%;
+  /* background-size: auto 3000px; */
+
 }
 
 .background-layer img {
-  /* width: 50%;         
-  height: auto;   
-  object-fit: cover;   */
-   width: auto;        /* let width adjust naturally */
-  height: 100%;       /* fill full height of container */
-  object-fit: cover;  /* crop horizontally if needed */
+ 
+   width: auto;       
+  height: 100%;       
+  object-fit: cover;  
   flex-shrink: 0; 
 }
 
 /* animations */
 /* keyframes reused for all layers */
-@keyframes moveHorizontal {
+
+/* @keyframes moveHorizontal {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* animations with different speeds */
+animations with different speeds
 .sky         { animation: moveHorizontal 60s linear infinite; }
 .clouds-back { animation: moveHorizontal 120s linear infinite; }
-.clouds-mid  { animation: moveHorizontal 80s linear infinite; }
+.clouds-mid  { animation: moveHorizontal 90s linear infinite; }
 .clouds-front{ animation: moveHorizontal 40s linear infinite; }
-.grass       { animation: moveHorizontal 20s linear infinite; }
+.grass       { animation: moveHorizontal 20s linear infinite; } */
+
+@keyframes moveHorizontal {
+  from { background-position: 0 0; }
+  to   { background-position: -3000px 0; }
+}
+
+/* different speeds for parallax */
+.sky         { animation: moveHorizontal 640s linear infinite;
+               background-image: url("../assets/Background.png"); }
+
+.clouds-back { animation: moveHorizontal 320s linear infinite;
+               background-image: url("../assets/Clouds-back.png"); }
+
+.clouds-mid  { animation: moveHorizontal 160s linear infinite;
+               background-image: url("../assets/Clouds-mid.png"); }
+
+.clouds-front{ animation: moveHorizontal 80s linear infinite;
+               background-image: url("../assets/Clouds-front.png"); }
+
+.grass       { animation: moveHorizontal 40s linear infinite;
+               background-image: url("../assets/Grass.png"); }
