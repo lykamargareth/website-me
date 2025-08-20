@@ -9,11 +9,8 @@ export { default as MenuBar } from './desktop/MenuBar';
 export { default as Title } from './desktop/Title';
 
 export { default as ButtonsMain } from './desktop/ButtonsMain';
-<<<<<<< Updated upstream
-=======
 export { default as Background } from './desktop/Background';
 
 
->>>>>>> Stashed changes
 
 

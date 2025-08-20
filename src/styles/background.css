@@ -1,78 +1,48 @@
 .background-container {
-  position: fixed; /* sticks to full screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* stay behind content */
+  z-index: -1;
 }
 
-/* all layers */
 .background-layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200vw;     
-  /* height: 100vh;    */
-  display: flex;
+  width: 300%;          /* double width for looping */
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: cover; /* fills full height */
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .background-layer img {
-  width: 100vw;      
-  height: auto;    
-  object-fit: cover; 
+  /* width: 50%;         
+  height: auto;   
+  object-fit: cover;   */
+   width: auto;        /* let width adjust naturally */
+  height: 100%;       /* fill full height of container */
+  object-fit: cover;  /* crop horizontally if needed */
+  flex-shrink: 0; 
 }
 
 /* animations */
-.sky {
-  animation: moveSky 60s linear infinite;
-}
-
-.clouds-back {
-  top: 10%;
-  animation: moveCloudsBack 120s linear infinite;
-}
-
-.clouds-mid {
-  top: 20%;
-  animation: moveCloudsMid 80s linear infinite;
-}
-
-.clouds-front {
-  top: 30%;
-  animation: moveCloudsFront 40s linear infinite;
-}
-
-.grass {
-  bottom: 0;
-  animation: moveGrass 20s linear infinite;
-}
-
-/* keyframes: scroll to half width so second image takes over seamlessly */
-@keyframes moveSky {
+/* keyframes reused for all layers */
+@keyframes moveHorizontal {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
-@keyframes moveCloudsBack {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes moveCloudsMid {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes moveCloudsFront {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes moveGrass {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* animations with different speeds */
+.sky         { animation: moveHorizontal 60s linear infinite; }
+.clouds-back { animation: moveHorizontal 120s linear infinite; }
+.clouds-mid  { animation: moveHorizontal 80s linear infinite; }
+.clouds-front{ animation: moveHorizontal 40s linear infinite; }
+.grass       { animation: moveHorizontal 20s linear infinite; }

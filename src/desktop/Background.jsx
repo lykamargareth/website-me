@@ -3,7 +3,7 @@ import grass from "../assets/Grass.png";
 import cloudsFront from "../assets/Clouds-front.png";
 import cloudsMid from "../assets/Clouds-mid.png";
 import cloudsBack from "../assets/Clouds-back.png";
-import sky from "../assets/Sky.png";
+import sky from "../assets/Background.png";
 // import "./Background.css";
 
 function Background() {
