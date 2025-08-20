@@ -35,7 +35,6 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
         onMouseDown={bringToFront}
         style= {{ 
         zIndex: win.zIndex || 1  , 
-        zIndex: win.zIndex || 1,
         }}
       >
         <div className="title-bar">
