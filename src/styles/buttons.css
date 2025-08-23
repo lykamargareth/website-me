@@ -1,56 +1,46 @@
 @import '../assets/fonts/fonts.css';
 
 /**** BUTTONS FOR DOCK (TO OPEN) ****/
+/**** BUTTONS FOR DOCK (TO OPEN) ****/
 .button-row {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 30px;
-
+  align-items: center;
   padding: 10px 20px;
-  background-color: rgb(255, 194, 222, 0.4);
-  
+  background-color: rgba(255, 194, 222, 0.4);
   border-radius: 100px;
-
   position: fixed;     
   bottom: 40px;       
   left: 50%;             
-  transform: translateX(-50%);  
+  transform: translateX(-50%);
+  z-index: 999;
 }
 
 .button-general {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: pink;
-  color: rgb(60, 45, 45);
-
-  font-family: 'animalCross';
-  font-size: 20px;
-
-  padding: 5px 15px;
-  min-width: 80px;
-
-  border: 2px solid black;
-  border-radius: 150px;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-
-  flex: 1;
-  box-sizing: border-box;
-  white-space: nowrap;
-  overflow: visible;
-
-  /* Smooth transitions */
-  transition: 
-    flex-grow 300ms ease, 
-    transform 300ms ease, 
-    filter 300ms ease;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  transition: transform 200ms ease, filter 200ms ease;
+  will-change: transform;
 }
 
-  .button-general:hover {
+.button-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+  /* .button-general:hover {
     flex-grow: 2;
-    transform: scale(1.001);
+    transform: scale(1.05);
     filter: brightness(1.05);
     z-index: 1;
     cursor: default;
@@ -58,9 +48,9 @@
 
   .button-row:hover .button-general:not(:hover) {
   flex-grow: 1;
-  transform: scale(0.98);
+  transform: scale(0.95);
   filter: brightness(0.95);
-}
+} */
 
 
 
@@ -142,3 +132,11 @@
     transform: scale(1.02);     
     filter: brightness(1.03)
     }
+
+
+
+.button-icon {
+    width: 24px; /* adjust size as needed */
+    height: 24px;
+    object-fit: contain;
+}
