@@ -33,16 +33,11 @@ function AboutMe() {
 
       {/* Email body */}
       <div className="email-window-email scrollable-section">
-        {/* <h2>Margareth Sabate</h2> */}
-        {/* <h3>
-          a mechatronics & robotics student blending tech projects with a love for
-          creative art
-        </h3> */}
 
         <p>
-          dear future friend, ✨ <br /><br />
+          hey there! ✨ <br /><br />
           i’m margareth, <br />
-          an aspiring uni graduate with a whole life ahead of her, <br />
+          a mechatronics & robotics graduate with a whole life ahead of her, <br />
           full of robots, crafts, and cozy vibes &lt;3<br /><br />
           here’s a lil more about me :)
         </p>
@@ -54,7 +49,7 @@ function AboutMe() {
 
         <h2>🎨 hobbies and interests 🎨 </h2>
         <ul>
-          <li>crafts hehe (crochet, sewing, drawing/painting, ceramics)</li>
+          <li>crafts (crochet, sewing, drawing/painting, ceramics)</li>
           <li>binge watching tv shows and movies</li>
           <li>food (mostly eating, sometimes baking)</li>
           <li>fashion! (thrifting)</li>
@@ -65,7 +60,7 @@ function AboutMe() {
           with love,<br/>
           <br />
           <br />
-          Margareth S
+          Margareth Sabate
         </p>
       </div>
     </div>

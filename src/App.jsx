@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <Background />
-      <MenuBar onAppleClick={closeAllWindows} />
+      <MenuBar onHeartClick={closeAllWindows} />
       <Title />
       <ButtonsMain windows={windows} setWindows={setWindows} />
     </div>

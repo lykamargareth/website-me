@@ -1,22 +1,23 @@
 import { useRef, useState, useEffect } from 'react';
-import Draggable from 'react-draggable';
+import Draggable from 'react-draggable'; // package for draggable windows
 
 
 function DragWindows({ onClose, bringToFront, win, content: Content }) {
-  const nodeRef = useRef(null); // Ref for the draggable element
-  const [isClosing, setIsClosing] = useState(false);
-  const [position, setPosition] = useState(win.pos);
+  const nodeRef = useRef(null); // ref to the draggable DOM element
+  const [isClosing, setIsClosing] = useState(false); // triggers closing CSS animation
+  const [position, setPosition] = useState(win.pos); // tracks window position
 
+  // bring window to front when it first opens
   useEffect(() => {
     bringToFront();
   }, []);
 
+  // triggers CSS fade-out animation then removes the window after 300ms
   const handleClose = () => {
-    setIsClosing(true);           // trigger CSS fade
-    setTimeout(() => onClose(), 300); // remove after animation
+    setIsClosing(true);           
+    setTimeout(() => onClose(), 300); 
   };
 
-  
   return (
     <Draggable 
       handle=".title-bar" 
@@ -24,7 +25,7 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
       position={position} 
       // defaultPosition={position}           
       onDrag={(e, data) => {
-        void e; // i dont need this e shit
+        void e; // i dont need this e 
         setPosition({ x: data.x, y: data.y });
       }}
       onStart={bringToFront} 
@@ -33,6 +34,7 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
         className={`window-main ${win.type || 'default'}-window ${isClosing ? 'closing' : ''}`}
         ref={nodeRef}
         onMouseDown={bringToFront}
+        onPointerDown={bringToFront}
         style= {{ 
         zIndex: win.zIndex || 1  , 
         }}

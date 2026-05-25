@@ -1,39 +1,33 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { AboutMe, Skills, Contact, Funzies, DragWindows } from '../index';
+import { AboutMe, Skills, Contact, Projects, DragWindows } from '../index';
 import TerminalIcon from '../assets/Terminal-icon.png';
 import MailIcon from '../assets/Mail-icon.png';
 import ChromeIcon from '../assets/Chrome-icon.png';
 
+// each window's config: what component to render, what type it is, and what icon to show in the dock
+const components = {
+  win1: { title: 'AboutMe', component: AboutMe, type: 'email', icon: MailIcon },
+  win2: { title: 'Skills', component: Skills, type: 'terminal', icon: TerminalIcon },
+  win3: { title: 'Contact', component: Contact, type: 'chrome', icon: ChromeIcon },
+  win4: { title: 'Projects', component: Projects, type: 'projects', icon: null }
+};
+
+// convert the components object into an array so we can use .map()
+const icons = Object.entries(components);
+const maxScale = 1.8; // max scale for dock icon
+
 function ButtonsMain({ windows, setWindows }) {
-  const [topZ, setTopZ] = useState(5);
-  const dockRef = useRef();
-  const [scales, setScales] = useState([]);
-  const iconRefs = useRef([]);
+  const [topZ, setTopZ] = useState(5);      // tracks the highest zIndex so far
+  const [scales, setScales] = useState([]); // stores the scale of each dock icon
+  const dockRef = useRef();                 // ref to the dock bar element
+  const iconRefs = useRef([]);              // refs to each individual icon button
 
-  const components = {
-    win1: { title: 'AboutMe', component: AboutMe, type: 'email', icon: MailIcon },
-    win2: { title: 'Skills', component: Skills, type: 'terminal', icon: TerminalIcon },
-    win3: { title: 'Contact', component: Contact, type: 'chrome', icon: ChromeIcon },
-    win4: { title: 'Funzies', component: Funzies, type: 'funzies', icon: null }
-  };
-
-  const icons = Object.entries(components);
-
-  // Initialize refs (only once)
+  // create a ref for each icon button once on mount so we can measure their positions
   useEffect(() => {
     iconRefs.current = icons.map(() => React.createRef());
   }, []);
 
-  function getRandomPos(windowWidth = 500, windowHeight = 400, topPadding = 150, sidePadding = 10) {
-    const buttonRow = document.querySelector('.button-row');
-    const buttonRowHeight = buttonRow ? buttonRow.offsetHeight : 60;
-    const maxX = window.innerWidth - windowWidth - sidePadding;
-    const maxY = window.innerHeight - windowHeight - buttonRowHeight - topPadding;
-    const x = Math.floor(Math.random() * (maxX - sidePadding + 1)) + sidePadding;
-    const y = Math.floor(Math.random() * (maxY - topPadding + 1)) + 150;
-    return { x, y };
-  }
-
+  // opens a window if it's not already open, otherwise just brings it to front
   function openWindow(id, title) {
     const existing = windows.find(win => win.id === id);
     if (!existing) {
@@ -49,10 +43,12 @@ function ButtonsMain({ windows, setWindows }) {
     }
   }
 
+  // removes the window with the given id from the windows array (closes window)
   function closeWindow(id) {
     setWindows(current => current.filter(win => win.id !== id));
   }
 
+  // gives the target window the current highest zIndex, then increments topZ for next time
   function bringToFront(id) {
     setWindows(current => current.map(win =>
       win.id === id ? { ...win, zIndex: topZ } : win
@@ -60,31 +56,37 @@ function ButtonsMain({ windows, setWindows }) {
     setTopZ(prev => prev + 1);
   }
 
-  // 🎯 Mouse move scaling logic
-  const handleMouseMove = (e) => {
-    const dockRect = dockRef.current.getBoundingClientRect();
-    const pointerX = e.clientX - dockRect.left;
+// returns the scale for a single icon based on how far the cursor is from its center
+function getIconScale(pointerX, iconRect, dockRect) { // pointerX: cursor x relative to dock, iconRect: icon bounds, dockRect: dock bounds
+  const iconCenter = iconRect.left + iconRect.width / 2 - dockRect.left; // icon center relative to dock
+  const dist = Math.abs(pointerX - iconCenter);                           // distance from cursor to icon center
+  return Math.min(Math.max(1, maxScale - dist / 100), maxScale);                   // clamp scale between 1 and 1.8
+}
 
-    const newScales = iconRefs.current.map(ref => {
-      const iconRect = ref.current?.getBoundingClientRect();
-      if (!iconRect) return 1;
-      const iconCenter = iconRect.left + iconRect.width / 2 - dockRect.left;
-      const dist = Math.abs(pointerX - iconCenter);
-      const scale = Math.max(1, 1.8 - dist / 100); // adjust falloff
-      return Math.min(scale, 1.8);
-    });
+// calculates how much to scale each dock icon based on cursor distance from icon center
+const handleDockMouseMove = (e) => {
+  const dockRect = dockRef.current.getBoundingClientRect(); // dock position on screen
+  const pointerX = e.clientX - dockRect.left;              // cursor x relative to dock
 
-    setScales(newScales);
-  };
+  const newScales = iconRefs.current.map(ref => {
+    const iconRect = ref.current?.getBoundingClientRect();  // icon position on screen
+    if (!iconRect) return 1;                                // default to normal scale if icon not found
+    return getIconScale(pointerX, iconRect, dockRect);
+  });
+
+  setScales(newScales); // trigger re-render with new scales
+};
 
   return (
     <div>
+      {/* dock bar */}
       <div
         ref={dockRef}
         className="button-row"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={() => setScales([])}
+        onMouseMove={handleDockMouseMove}
+        onMouseLeave={() => setScales([])} // reset scales when mouse leaves dock
       >
+        {/* render a button for each window */}
         {icons.map(([id, { title, icon }], idx) => (
           <button
             key={id}
@@ -92,9 +94,10 @@ function ButtonsMain({ windows, setWindows }) {
             className="button-general"
             onClick={() => openWindow(id, title)}
             style={{
-              transform: `scale(${scales[idx] || 1})`,
+              transform: `scale(${scales[idx] || 1})`, // apply zoom scale
             }}
           >
+            {/* show icon image if available, otherwise show title text */}
             {icon ? (
               <img src={icon} alt={title} className="button-icon" />
             ) : (
@@ -104,8 +107,9 @@ function ButtonsMain({ windows, setWindows }) {
         ))}
       </div>
 
+      {/* render each open window inside a DragWindows wrapper */}
       {windows.map(win => {
-        const Component = components[win.id].component;
+        const Component = components[win.id].component; // look up which component to render
         return (
           <DragWindows
             key={win.id}
@@ -123,6 +127,17 @@ function ButtonsMain({ windows, setWindows }) {
       })}
     </div>
   );
+}
+
+// calculates a random x/y position that keeps the window within the screen bounds
+function getRandomPos(windowWidth = 500, windowHeight = 400, topPadding = 150, sidePadding = 10) {
+  const buttonRowHeight = document.querySelector('.button-row')?.offsetHeight ?? 60; // get the dock height, if null use 60
+  const maxX = window.innerWidth - windowWidth - sidePadding;
+  const maxY = window.innerHeight - windowHeight - buttonRowHeight - topPadding;
+  return {
+    x: Math.floor(Math.random() * (maxX - sidePadding + 1)) + sidePadding,
+    y: Math.floor(Math.random() * (maxY - topPadding + 1)) + 150,
+  };
 }
 
 export default ButtonsMain;

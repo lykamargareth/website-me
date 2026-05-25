@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"; // package for smooth scrolling/marquee effect
 
 import sky from "../assets/Background.png";
 import cloudsBack from "../assets/Clouds-back.png";
@@ -7,6 +7,8 @@ import cloudsMid from "../assets/Clouds-mid.png";
 import cloudsFront from "../assets/Clouds-front.png";
 import grass from "../assets/Grass.png";
 
+// each layer has its own scroll speed and zIndex to create a parallax effect
+// faster speed + higher zIndex = closer to the viewer
 const layers = [
   { src: sky, speed: 5, zIndex: 1, alt: "sky" },
   { src: cloudsBack, speed: 10, zIndex: 2, alt: "clouds back" },
@@ -17,6 +19,7 @@ const layers = [
 
 function Background() {
   return (
+    // fixed fullscreen container behind everything else
     <div
       style={{
         position: "fixed",
@@ -24,16 +27,17 @@ function Background() {
         left: 0,
         width: "100vw",
         height: "100vh",
-        zIndex: -1,
+        zIndex: -1, // puts it behind everything
         overflow: "hidden",
       }}
     >
+      {/* render each layer as its own scrolling marquee */}
       {layers.map(({ src, speed, zIndex, alt }) => (
         <Marquee
           key={alt}
-          direction="left"
+          direction="left" 
           speed={speed}
-          gradient={false}
+          gradient={false} 
           pauseOnHover={false}
           style={{
             position: "absolute",

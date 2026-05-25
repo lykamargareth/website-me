@@ -1,5 +1,5 @@
 
-function Funzies() {
+function Projects() {
 
   return (
     <div>
@@ -10,4 +10,4 @@ function Funzies() {
   );
 }
 
-export default Funzies;
+export default Projects;
