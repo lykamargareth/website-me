@@ -42,7 +42,7 @@ function MenuBar({ onHeartClick }) {
         <div className="menu-item">help</div> */}
       </div>
       <div className="menu-right">
-        <div className="menu-item"><BatteryStatus /></div>
+        {/* <div className="menu-item"><BatteryStatus /></div> */}
         <div className="menu-item"><Time /></div>
       </div>
     </div>
