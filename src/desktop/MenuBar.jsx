@@ -13,7 +13,7 @@ function MenuBar({ onHeartClick }) {
       setTime(new Date().toLocaleTimeString([], options)); 
     }, 60000); 
 
-    return <span>🕒 {time}</span>;
+    return <span> {time}</span>;
   }
 
   function BatteryStatus() {

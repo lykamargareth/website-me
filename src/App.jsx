@@ -24,6 +24,13 @@ function App() {
 export default App;
 
 
+// NPM COMMANDS 
+// npm install        → install all dependencies (run once after cloning)
+// npm run dev        → start local dev server at http://localhost:5173
+// npm run build      → build for production (creates dist folder)
+// npm run deploy     → deploy to GitHub Pages
+// Ctrl + C           → stop the dev server
+
 {/* 
   need to do:
   -make animation for open and closing tabs 
