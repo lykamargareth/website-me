@@ -189,13 +189,153 @@
 
 
 
-/**** FUNZIES WINDOW ****/
+/**** PROJECTS WINDOW ****/
 .projects-window {
   background: #e6f7ff;
   color: #1a1a1a;
+  width: 700px !important;
+  height: 550px !important;
 }
 
-  .projects-window .title-bar {
-    background: #cceeff;
-    color: #1a1a1a;
-  }
+.projects-window .title-bar {
+  background: #cceeff;
+  color: #1a1a1a;
+}
+
+.projects-window .window-body {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.projects-container {
+  font-family: 'Times New Roman', serif;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* toolbar */
+.explorer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.04);
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.explorer-toolbar-divider {
+  width: 1px;
+  height: 14px;
+  background: #ccc;
+  margin: 0 4px;
+}
+
+.explorer-path {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: #555;
+}
+
+.explorer-toolbar-right {
+  font-size: 11px;
+  color: #888;
+}
+
+/* column headers and rows — same grid layout */
+.explorer-header,
+.folder-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 0.8fr 0.6fr;
+  padding: 4px 8px;
+  align-items: center;
+}
+
+.explorer-header {
+  font-weight: bold;
+  font-size: 12px;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+  background: rgba(0,0,0,0.02);
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.folder-row {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.1s ease;
+}
+
+.folder-row:hover { background: rgba(0,0,0,0.05); }
+.folder-row.folder-open { background: rgba(0, 100, 255, 0.08); }
+
+/* folder list — capped at ~3 rows, scrolls */
+.folder-list {
+  max-height: 45px !important;
+  overflow-y: auto;
+  flex-shrink: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* merged column styles */
+.col-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.col-date, .col-type, .col-size {
+  color: #666;
+  font-size: 11px;
+}
+
+.col-size { text-align: right; }
+
+/* footer */
+.explorer-footer {
+  padding: 4px 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 11px;
+  color: #888;
+  background: rgba(0,0,0,0.02);
+  flex-shrink: 0;
+}
+
+/* preview panel */
+.folder-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.folder-preview-header {
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 12px;
+  background: rgba(0,0,0,0.02);
+  border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.folder-preview-content {
+  text-align: center;
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  padding-bottom: 6px;
+  max-height: 300px !important;
+}

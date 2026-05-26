@@ -1,7 +1,6 @@
 @import '../assets/fonts/fonts.css';
 
 /**** BUTTONS FOR DOCK (TO OPEN) ****/
-/**** BUTTONS FOR DOCK (TO OPEN) ****/
 .button-row {
   display: flex;
   gap: 10px;
@@ -139,4 +138,24 @@
     width: 24px; /* adjust size as needed */
     height: 24px;
     object-fit: contain;
+}
+
+/**** PROJECTS WINDOW ****/
+.explorer-toolbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.explorer-toolbar-btn-disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.explorer-toolbar-btn:hover {
+  background: rgba(0,0,0,0.08);
 }

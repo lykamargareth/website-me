@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import { useBattery , useInterval } from 'react-use';
-import HeartIcon from '../assets/Heart-icon.png';
+import { heartIcon } from '../assets/images';
 
 function MenuBar({ onHeartClick }) {
   // const [time, setTime] = useState("");
@@ -13,7 +13,7 @@ function MenuBar({ onHeartClick }) {
       setTime(new Date().toLocaleTimeString([], options)); 
     }, 60000); 
 
-    return <span> {time}</span>;
+    return <span className="menu-time">{time}</span>;
   }
 
   function BatteryStatus() {
@@ -31,7 +31,7 @@ function MenuBar({ onHeartClick }) {
     <div className="menu-bar">
       <div className="menu-left">
         <div className="menu-item" onClick={onHeartClick}>
-          <img src={HeartIcon} alt="heart" className="Heart-icon" style={{ width: '30px', height: '30px' }} />
+          <img src={heartIcon} alt="heart" className="Heart-icon" style={{ width: '30px', height: '30px' }} />
         </div>
         {/* <div className="menu-item"><strong>finder</strong></div>
         <div className="menu-item">file</div>
@@ -43,7 +43,7 @@ function MenuBar({ onHeartClick }) {
       </div>
       <div className="menu-right">
         {/* <div className="menu-item"><BatteryStatus /></div> */}
-        <div className="menu-item"><Time /></div>
+        <div className="menu-item" style={{ marginRight: '5px' }}><Time /></div>
       </div>
     </div>
   );

@@ -1,11 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee"; // package for smooth scrolling/marquee effect
 
-import sky from "../assets/Background.png";
-import cloudsBack from "../assets/Clouds-back.png";
-import cloudsMid from "../assets/Clouds-mid.png";
-import cloudsFront from "../assets/Clouds-front.png";
-import grass from "../assets/Grass.png";
+import { sky, cloudsBack, cloudsMid, cloudsFront, grass } from '../assets/images';
 
 // each layer has its own scroll speed and zIndex to create a parallax effect
 // faster speed + higher zIndex = closer to the viewer

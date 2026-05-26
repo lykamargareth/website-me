@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { AboutMe, Skills, Contact, Projects, DragWindows } from '../index';
-import TerminalIcon from '../assets/Terminal-icon.png';
-import MailIcon from '../assets/Mail-icon.png';
-import ChromeIcon from '../assets/Chrome-icon.png';
+import { mailIcon, chromeIcon, terminalIcon } from '../assets/images';
 
 // each window's config: what component to render, what type it is, and what icon to show in the dock
 const components = {
-  win1: { title: 'AboutMe', component: AboutMe, type: 'email', icon: MailIcon },
-  win2: { title: 'Skills', component: Skills, type: 'terminal', icon: TerminalIcon },
-  win3: { title: 'Contact', component: Contact, type: 'chrome', icon: ChromeIcon },
+  win1: { title: 'AboutMe', component: AboutMe, type: 'email', icon: mailIcon },
+  win2: { title: 'Skills', component: Skills, type: 'terminal', icon: terminalIcon },
+  win3: { title: 'Contact', component: Contact, type: 'chrome', icon: chromeIcon },
   win4: { title: 'Projects', component: Projects, type: 'projects', icon: null }
 };
 
