@@ -1,0 +1,173 @@
+/**** MAXIMIZED — LAYOUT ****/
+.window-main.maximized .chrome-window .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/**** MAXIMIZED — HEADING TEXT ****/
+.window-main.maximized .chrome-name {
+  color: #35281E;
+  font-family: 'Rainbow';
+  font-size: 100px !important;
+  margin-bottom: 20px;
+  top: 23vh;
+
+}
+
+/**** MAXIMIZED — SEARCH BAR ****/
+.window-main.maximized .chrome-search-tab {
+  position: relative;
+  transform: none;
+  /* margin-bottom: 20px; */
+
+  position: relative;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25vw;
+  height: 25px;
+}
+
+  .window-main.maximized .chrome-search-word {
+    color: rgb(34, 34, 34, 0.9);
+    font-family: "Rainbow";
+    font-size: 20px;
+    top: 2px;
+    left: 0px;
+  }
+
+
+/**** MAXIMIZED — BUTTONS ****/
+.window-main.maximized .chrome-row-button {
+  position: relative;
+  top: 30vh; 
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+/**** MAXIMIZED — HEADING TEXT ****/
+.window-main.maximized .chrome-name {
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+
+  color: #35281E;
+
+  font-family: 'Rainbow';
+  font-size: 100px !important;
+
+  top: 23vh;
+}
+
+.window-main.maximized .chrome-button {
+  font-family: 'Rainbow';
+  font-size: 1.5vw;
+  padding: 0.5vw;
+
+  background: #ffc1de;
+  color: #1a1a1a;
+
+  border-radius: 16px;
+  border: 1px solid rgb(245, 147, 201);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
+  transition: transform 100ms ease 0s;
+}
+
+
+/**** CONTACT WINDOW SHELL ****/
+.chrome-window {
+  background: #ffe6f0;
+  color: #1a1a1a;
+}
+
+
+/**** TITLE BAR ****/
+.chrome-window .title-bar {
+  background: #ffc1de;
+  color: #1a1a1a;
+}
+
+
+/**** HEADING TEXT ****/
+.chrome-name {
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+
+  color: #35281E;
+
+  font-family: 'Rainbow';
+  font-size: 70px !important;
+
+  top: 45px;
+}
+
+
+/**** SEARCH BAR ****/
+.chrome-search-tab {
+  display: flex;
+  position: relative;
+  top: 60px;
+  left: 85px;
+
+  background: rgb(255, 193, 222, 0.6);
+
+  border-radius: 100px;
+  width: 300px;
+  height: 20px;
+  justify-content: center;
+}
+
+  /* typewriter text inside search bar */
+  .chrome-search-word {
+    position: relative;
+    color: rgb(34, 34, 34, 0.9);
+    font-family: "Rainbow";
+    font-size: 13px;
+    top: 2px;
+    left: 10px;
+  }
+
+
+/**** BUTTONS — LINKS ****/
+.chrome-row-button {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 80px;
+  gap: 25px;
+}
+
+.chrome-button {
+  font-family: 'Rainbow';
+  font-size: 15px;
+  padding: 10px;
+
+  background: #ffc1de;
+  color: #1a1a1a;
+
+  border-radius: 16px;
+  border: 1px solid rgb(245, 147, 201);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
+  transition: transform 100ms ease 0s;
+}
+
+  .chrome-button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.03);
+  }
+
+
+
+
+

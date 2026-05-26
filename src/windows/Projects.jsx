@@ -17,7 +17,7 @@ const projects = [
         <h3 style={{ marginBottom: '0' }}>✨BCIT mechatronics and robotics final capstone✨</h3>
         <p style={{ marginTop: '0' }} >margareth sabate, keaton, kassia ferguson</p>
 
-        <img src={capstonePrinterShot} alt="3D Printer" style={{ width: '60%', borderRadius: '6px' }} />
+        <img src={capstonePrinterShot} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p>
           this capstone project was sponsored by BCIT's additive manufacturing group, who challenged us to 
           design a 5-DoF non-planar 3D printing system as a stepping stone towards metal printing in the future. 
@@ -26,14 +26,14 @@ const projects = [
           printing solves this by tilting the build plate so the nozzle always prints perpendicular to the surface.
         </p>
 
-        <img src={capstoneCloseShot} alt="3D Printer" style={{ width: '60%', borderRadius: '6px' }} />
+        <img src={capstoneCloseShot} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p>
           we were given an existing CoreXY printer and added a custom turntable that tilts and rotates the print bed, 
           a modified slicer, and a real-time monitoring system. this lets the printer handle complex overhanging 
           shapes without any support structures.
         </p>
 
-        <img src={angleMonitor} alt="3D Printer" style={{ width: '60%', borderRadius: '6px' }} />
+        <img src={angleMonitor} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p>
           i led the angle monitoring system, a system to ensure the bed was always at the 
           right angle during printing. we built a safety system that tracks the bed's tilt in real time and 
@@ -41,7 +41,7 @@ const projects = [
           3D dashboard that's connected over WiFi. the printer ran for 3 to 4 hour sessions with zero issues.
         </p>
 
-        <img src={capstoneGroupPhoto} alt="3D Printer" style={{ width: '60%', borderRadius: '6px' }} />
+        <img src={capstoneGroupPhoto} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p style={{ marginBottom: '30px' }}>
           P.S. thank you to the BCIT photography team for these AMAZING photos
         </p>
@@ -61,7 +61,7 @@ const projects = [
           controls 
           controlsList="nodownload"
           muted={false}
-          style={{ width: '95%', borderRadius: '6px' }} 
+          style={{ width: '70%', borderRadius: '6px' }} 
         />
       </div>
     ),
@@ -103,17 +103,17 @@ const projects = [
   },
   {
     id: 3,
-    name: "555 piano circuit",
+    name: "NE555 piano circuit",
     date: "may 2025",
     type: "circuit",
     size: "12 keys",
     content: (
       <div>
-        <h3 style={{ marginBottom: '0' }}>✨ BCIT digital and electronic circuits project ✨</h3>
+        <h3 style={{ marginBottom: '0' }}>✨ NE555 piano circuit ✨</h3>
         <p style={{ marginTop: '0' }}>margareth sabate</p>
 
         <p>
-          a 12-key piano circuit built on a breadboard using 555 timer chips. each button plays a 
+          a 12-key piano circuit built on a breadboard using an NE555 timer chips. each button plays a 
           different musical note by switching resistor values to output different frequencies, 
           with a toggle switch that shifts the piano up or down an octave. 
           i calculated the resistor combinations for all 12 chromatic 
@@ -133,21 +133,21 @@ const projects = [
           here's some quick videos of the piano!
         </p>
         <p style={{ marginTop: "0", color: "#888", fontSize: "11px" }}>
-          (keep in mind i'm using piezo buzzers so the sound isn't great, but still fun!!!)
+          (keep in mind im using piezo buzzers so the sound isn't great, but still fun!!!)
         </p>
         <video 
           src={pianoVid1} 
           controls 
           controlsList="nodownload"
           muted={false}
-          style={{ width: '45%', borderRadius: '6px' }} 
+          style={{ width: '25%', borderRadius: '6px' }} 
         />
         <video 
           src={pianoVid2} 
           controls 
           controlsList="nodownload"
           muted={false}
-          style={{ width: '45%', borderRadius: '6px' }} 
+          style={{ width: '25%', borderRadius: '6px' }} 
         />
 
       </div>

@@ -1,13 +1,59 @@
-/**** PROJECTS FILE EXPLORER ****/
+.window-main.maximized .folder-preview-header {
+  font-size: 15px;
+}
+
+.window-main.maximized .folder-preview-content {
+  font-size: 18px;
+}
+
+
+.projects-window p {
+  margin-top: 0px;
+  margin-bottom: 2px;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  white-space: pre-line;
+}
+
+
+/**** PROJECTS WINDOW SHELL ****/
+.projects-window {
+  background: #e6f7ff;
+  color: #1a1a1a;
+  width: 700px !important;
+  height: 550px !important;
+}
+
+
+/**** TITLE BAR ****/
+.projects-window .title-bar {
+  background: #cceeff;
+  color: #1a1a1a;
+}
+
+
+/**** WINDOW BODY ****/
+.projects-window .window-body {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%; /* stretch to fill window */
+}
+
 .projects-container {
   font-family: 'Times New Roman', serif;
   font-size: 13px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex: 1; /* fill remaining space */
+  overflow: hidden; /* prevent content from overflowing */
 }
 
-/* toolbar */
+
+/**** TOOLBAR ****/
 .explorer-toolbar {
   display: flex;
   align-items: center;
@@ -16,16 +62,7 @@
   background: rgba(0,0,0,0.04);
   border-bottom: 1px solid #ddd;
   font-size: 12px;
-}
-
-.explorer-toolbar-btn {
-  cursor: pointer;
-  padding: 2px 5px;
-  border-radius: 3px;
-}
-
-.explorer-toolbar-btn:hover {
-  background: rgba(0,0,0,0.08);
+  flex-shrink: 0;
 }
 
 .explorer-toolbar-divider {
@@ -50,7 +87,29 @@
   color: #888;
 }
 
-/* column headers and folder rows — both use same grid */
+
+/**** BUTTONS — TOOLBAR ****/
+.explorer-toolbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+  .explorer-toolbar-btn-disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .explorer-toolbar-btn:hover {
+    background: rgba(0,0,0,0.08);
+  }
+
+
+/**** COLUMN HEADERS & FOLDER ROWS ****/
 .explorer-header,
 .folder-row {
   display: grid;
@@ -66,51 +125,40 @@
   border-bottom: 1px solid #ddd;
   background: rgba(0,0,0,0.02);
   cursor: default;
+  flex-shrink: 0;
 }
 
-/* folder row specific styles */
 .folder-row {
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.1s ease;
 }
 
-.folder-row:hover {
-  background: rgba(0,0,0,0.05);
-}
+  .folder-row:hover { background: rgba(0,0,0,0.05); }
+  .folder-row.folder-open { background: rgba(0, 100, 255, 0.08); }
 
-.folder-row.folder-open {
-  background: rgba(0, 100, 255, 0.08);
-}
 
-/* folder list */
+/**** FOLDER LIST ****/
 .folder-list {
-  flex: 1;
+  max-height: 120px; /* adjust this to however many rows you want visible */
   overflow-y: auto;
+  flex-shrink: 0;
+  border-bottom: 1px solid #ddd;
 }
 
-/* columns */
+/* column text styles */
 .col-name {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.col-date {
+.col-date, .col-type, .col-size {
   color: #666;
   font-size: 11px;
 }
 
-.col-type {
-  color: #666;
-  font-size: 11px;
-}
-
-.col-size {
-  color: #666;
-  font-size: 11px;
-  text-align: right;
-}
+.col-size { text-align: right; }
 
 /* expanded folder content */
 .folder-content {
@@ -123,11 +171,43 @@
   margin: 0 8px 4px 24px;
 }
 
-/* footer */
+
+/**** FOOTER ****/
 .explorer-footer {
   padding: 4px 8px;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   font-size: 11px;
   color: #888;
   background: rgba(0,0,0,0.02);
+  flex-shrink: 0;
+}
+
+
+/**** PREVIEW PANEL ****/
+.folder-preview {
+  flex: 1; /* fills all remaining space after toolbar, headers, list, footer */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0; /* lets flex children shrink properly */
+  height: 100% !important;
+}
+
+.folder-preview-header {
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 12px;
+  background: rgba(0,0,0,0.02);
+  border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.folder-preview-content {
+  text-align: center;
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 0;
 }

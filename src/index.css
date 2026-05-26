@@ -1,11 +1,10 @@
 /* styles/index.css */
 @import './styles/windows.css';
-@import './styles/bodyStyles.css';
-@import './styles/buttons.css';
-@import './styles/window-main.css';
+@import './styles/aboutMe.css';
+@import './styles/contact.css';
+@import './styles/skills.css';
+@import './styles/projects.css';
 @import './styles/animation.css';
 @import './styles/desktop.css';
 @import './styles/background.css';
-@import './styles/menuBar.css';
-
 

@@ -1,0 +1,138 @@
+/**** TERMINAL MAXIMIZED ****/
+.window-main.maximized .terminal-window ~ .window-body-maximized,
+.window-main.maximized .window-body-maximized:has(.terminal-body) {
+  justify-content: flex-start;
+}
+
+.window-main.maximized .terminal-window .terminal-body {
+  width: 100%;
+  height: 100%;
+  align-self: flex-start; /* overrides the justify-content: center from window-body-maximized */
+}
+
+.window-main.maximized .terminal-window .window-body {
+  font-size: 24px; /* bigger body text */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align */
+}
+
+.window-main.maximized .terminal-command-button {
+  font-size: 22px; /* bigger button text */
+}
+
+.window-main.maximized .terminal-window input {
+  font-size: 22px; /* bigger input text */
+
+}
+
+.window-main.maximized .terminal-line {
+  font-size: 24px; /* bigger skill lines */
+  line-height: 1.4;
+}
+
+/**** TERMINAL / SKILLS WINDOW SHELL ****/
+.terminal-window {
+  display: flex;
+
+  background-color: #0d0d0d;
+  color: #33ff33;
+
+  border: 2px solid #33ff33;
+
+  width: 500px;
+  height: 400px;
+  border-radius: 6px;
+
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+/**** TERMINAL TITLE BAR ****/
+.terminal-window .title-bar {
+  background-color: #222;
+  color: rgb(79, 250, 123);
+  border-bottom: 1px solid #33ff33;
+
+  font-weight: bold;
+
+  padding: 6px 10px;
+
+  user-select: none;
+}
+
+
+/**** TERMINAL BODY ****/
+.terminal-window .window-body {
+  font-family: 'Terminus';
+  font-size: 18px;
+
+  padding: 12px;
+
+  white-space: pre-wrap;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+
+/**** TERMINAL TEXT ****/
+.terminal-prompt {
+  margin-right: 0.5ch;
+  user-select: text; /* allow user to select the prompt */
+}
+
+.terminal-line {
+  color: #8bfd7f;
+  padding-left: 10px;
+  line-height: 1.1;
+}
+
+/* blinking cursor */
+.terminal-cursor {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 4px;
+
+  background-color: #33ff33;
+
+  width: 5px;
+  height: 16px;
+
+  animation: blink 1s steps(2, start) infinite;
+}
+
+
+/**** TERMINAL INPUT ****/
+.terminal-window input {
+  background: transparent;
+  color: #33ff33;
+
+  font-family: "Terminus";
+  font-size: 16px;
+
+  width: 100%;
+
+  border: none;
+  outline: none;
+}
+
+
+/**** BUTTONS — TERMINAL COMMANDS ****/
+.terminal-command-button {
+  align-items: center;
+  display: flex;
+
+  background: transparent;
+  color: rgb(79, 250, 123);
+
+  font-family: 'Terminus';
+  font-size: 16px;
+
+  border: none;
+  padding: 0;
+
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+}
