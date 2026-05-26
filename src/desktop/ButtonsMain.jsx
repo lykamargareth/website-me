@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { AboutMe, Skills, Contact, Projects, DragWindows } from '../index';
-import { mailIcon, chromeIcon, terminalIcon } from '../assets/images';
+import { mailIcon, chromeIcon, terminalIcon, projectsIcon } from '../assets/images';
 
 // each window's config: what component to render, what type it is, and what icon to show in the dock
 const components = {
   win1: { title: 'AboutMe', component: AboutMe, type: 'email', icon: mailIcon },
   win2: { title: 'Skills', component: Skills, type: 'terminal', icon: terminalIcon },
   win3: { title: 'Contact', component: Contact, type: 'chrome', icon: chromeIcon },
-  win4: { title: 'Projects', component: Projects, type: 'projects', icon: null }
+  win4: { title: 'Projects', component: Projects, type: 'projects', icon: projectsIcon }
 };
 
 // convert the components object into an array so we can use .map()

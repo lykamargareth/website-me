@@ -16,6 +16,8 @@ import angleMonitor from './angleMonitorUI.png';
 import capstoneReport from './capstoneReport.pdf';
 import PLCreport from './PLCreport.pdf';
 import pianoReport from './pianoReport.pdf';
+import projectsIcon from './Projects-icon.png';
+
 // import ladderLogic from './Elevator.zip';
 
 
@@ -41,5 +43,6 @@ export {
   capstoneReport,
   PLCreport,
   pianoReport,
+  projectsIcon,
   // ladderLogic,
 };
