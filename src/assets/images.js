@@ -17,6 +17,9 @@ import capstoneReport from './capstoneReport.pdf';
 import PLCreport from './PLCreport.pdf';
 import pianoReport from './pianoReport.pdf';
 import projectsIcon from './Projects-icon.png';
+import pianoVid1 from './pianoVid1.mov';
+import pianoVid2 from './pianoVid2.mov';
+
 
 // import ladderLogic from './Elevator.zip';
 
@@ -44,5 +47,7 @@ export {
   PLCreport,
   pianoReport,
   projectsIcon,
+  pianoVid1,
+  pianoVid2,
   // ladderLogic,
 };

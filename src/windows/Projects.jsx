@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { capstoneCloseShot, capstoneGroupPhoto, capstonePrinterShot, capstoneTimelapse, angleMonitor,
-         capstoneReport, PLCreport, pianoReport
+         capstoneReport, PLCreport, pianoReport,
+         pianoVid1, pianoVid2
       } from '../assets/images';
 
 
@@ -58,6 +59,8 @@ const projects = [
         <video 
           src={capstoneTimelapse} 
           controls 
+          controlsList="nodownload"
+          muted={false}
           style={{ width: '95%', borderRadius: '6px' }} 
         />
       </div>
@@ -122,10 +125,30 @@ const projects = [
           an AND gate, it was partially successful and a fun experiment to try :)
         </p>
         <p>
-          I sadly don't have any photos of my circuit :( but ill link my report
-          with the schematic below if you REALLY wanna build it yourself :)))
+          heres the link for the report if you wanna try building it yourself :)))
         </p>
         <a href={pianoReport} target="_blank" rel="noreferrer">📄click here for the report</a>
+
+        <p style={{ marginTop: "30px", marginBottom: "0" }}>
+          here's some quick videos of the piano!
+        </p>
+        <p style={{ marginTop: "0", color: "#888", fontSize: "11px" }}>
+          (keep in mind i'm using piezo buzzers so the sound isn't great, but still fun!!!)
+        </p>
+        <video 
+          src={pianoVid1} 
+          controls 
+          controlsList="nodownload"
+          muted={false}
+          style={{ width: '45%', borderRadius: '6px' }} 
+        />
+        <video 
+          src={pianoVid2} 
+          controls 
+          controlsList="nodownload"
+          muted={false}
+          style={{ width: '45%', borderRadius: '6px' }} 
+        />
 
       </div>
     ),
