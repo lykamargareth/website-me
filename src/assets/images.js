@@ -17,7 +17,7 @@ import capstoneReport from './capstoneReport.pdf';
 import PLCreport from './PLCreport.pdf';
 import pianoReport from './pianoReport.pdf';
 import projectsIcon from './Projects-icon.png';
-import pianoVid1 from './pianoVid1.mov';
+import pianoVid1 from './pianoVid1.mp4';
 import pianoVid2 from './pianoVid2.mov';
 
 
