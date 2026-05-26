@@ -14,7 +14,7 @@ const projects = [
     content: (
       <div>
         <h3 style={{ marginBottom: '0' }}>✨BCIT mechatronics and robotics final capstone✨</h3>
-        <p style={{ marginTop: '0' }} >margareth sabate, keaton westcott, kassia ferguson</p>
+        <p style={{ marginTop: '0' }} >margareth sabate, keaton, kassia ferguson</p>
 
         <img src={capstonePrinterShot} alt="3D Printer" style={{ width: '60%', borderRadius: '6px' }} />
         <p>
