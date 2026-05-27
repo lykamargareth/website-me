@@ -1,4 +1,9 @@
-.email-window-email {
+/* .window-main.maximized .email-window .scrollable-section {
+  max-height: 90%;
+  
+} */
+
+.window-main.maximized .email-window-email {
   font-size: 18px;
 }
 .window-main.maximized .email-window-email p {

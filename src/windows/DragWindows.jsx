@@ -21,7 +21,10 @@ function DragWindows({ onClose, bringToFront, win, content: Content }) {
 
   return (
     // outer wrapper handles centering when maximized so it doesnt conflict with draggable's transform
-    <div className={maximized ? 'maximized-overlay' : ''}>
+    <div 
+    className={maximized ? 'maximized-overlay' : ''} 
+    style={maximized ? { zIndex: win.zIndex || 10 } : {}}
+    >
       <Draggable 
         key={maximized ? 'max' : 'normal'} // remounts on toggle, clears internal offset
         handle=".title-bar" 
