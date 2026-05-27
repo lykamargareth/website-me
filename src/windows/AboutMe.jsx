@@ -59,7 +59,6 @@ function AboutMe() {
           <br/>
           with love,<br/>
           <br />
-          <br />
           Margareth Sabate
         </p>
       </div>

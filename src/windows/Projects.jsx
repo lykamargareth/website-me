@@ -14,12 +14,12 @@ const projects = [
     size: "5-DoF",
     content: (
       <div>
-        <h3 style={{ marginBottom: '0' }}>✨BCIT mechatronics and robotics final capstone✨</h3>
-        <p style={{ marginTop: '0' }} >margareth sabate, keaton, kassia ferguson</p>
+        <h2 style={{ marginBottom: '0' }}>✨BCIT mechatronics and robotics final capstone✨</h2>
+        <h3 style={{ marginTop: '0' }} >margareth sabate, keaton, kassia ferguson</h3>
 
         <img src={capstonePrinterShot} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p>
-          this capstone project was sponsored by BCIT's additive manufacturing group, who challenged us to 
+          this capstone project was sponsored by BCIT&apos;s additive manufacturing group, who challenged us to 
           design a 5-DoF non-planar 3D printing system as a stepping stone towards metal printing in the future. 
           traditional 3D printers need support structures for overhanging shapes, which is especially painful 
           in metal printing because the supports fuse to the part and are a nightmare to remove. non-planar 
@@ -36,23 +36,23 @@ const projects = [
         <img src={angleMonitor} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
         <p>
           i led the angle monitoring system, a system to ensure the bed was always at the 
-          right angle during printing. we built a safety system that tracks the bed's tilt in real time and 
-          alerts the user if something goes wrong. it's displayed on both the printer's built in web interface and a custom live 
-          3D dashboard that's connected over WiFi. the printer ran for 3 to 4 hour sessions with zero issues.
+          right angle during printing. we built a safety system that tracks the bed&apos;s tilt in real time and 
+          alerts the user if something goes wrong. it&apos;s displayed on both the printer&apos;s built in web interface and a custom live 
+          3D dashboard that&apos;s connected over WiFi. the printer ran for 3 to 4 hour sessions with zero issues.
         </p>
 
         <img src={capstoneGroupPhoto} alt="3D Printer" style={{ width: '50%', borderRadius: '6px' }} />
-        <p style={{ marginBottom: '30px' }}>
+        <p style={{ marginBottom: '30px'}} className="p-center">
           P.S. thank you to the BCIT photography team for these AMAZING photos
         </p>
 
-        <p>
+        <p className="p-center">
           ALSO if you wanna get more into the technical side of out project,
           feel free to take a look at our report linked below ↓
         </p>
         <a href={capstoneReport} target="_blank" rel="noreferrer">📄click here for the report</a>
 
-        <p style={{ marginTop: '50px' }}>
+        <p style={{ marginTop: '50px' }} className="p-center">
           PLEASEE enjoy this timelapse of our printer printing :)
         </p>
 
@@ -74,8 +74,8 @@ const projects = [
     size: "4 floors",
     content: (
       <div>
-        <h3 style={{ marginBottom: '0' }}>✨ BCIT PLC applications project ✨</h3>
-        <p style={{ marginTop: '0' }}>margareth sabate</p>
+        <h2 style={{ marginBottom: '0' }}>✨ BCIT PLC applications project ✨</h2>
+        <h3 style={{ marginTop: '0' }}>margareth sabate</h3>
 
         <p>
           this project was a four-floor elevator controller built using an allen-bradley CompactLogix PLC. 
@@ -85,12 +85,12 @@ const projects = [
         </p>
 
         <p>
-          i also added a bonus feature that adds a PIN-protected penthouse floor that's only accessible through 
+          i also added a bonus feature that adds a PIN-protected penthouse floor that&apos;s only accessible through 
           an HMI touchscreen. once you enter the correct code, only then the elevator take you to floor 4. 
           i got a perfect score on all 9 parts :)
         </p>
 
-        <p>
+        <p className="p-center">
           for more info about this project or wanna go through all 
           my lines of ladder logic for FUN!
           everythings linked below ↓
@@ -109,11 +109,11 @@ const projects = [
     size: "12 keys",
     content: (
       <div>
-        <h3 style={{ marginBottom: '0' }}>✨ NE555 piano circuit ✨</h3>
-        <p style={{ marginTop: '0' }}>margareth sabate</p>
+        <h2 style={{ marginBottom: '0' }}>✨ NE555 piano circuit ✨</h2>
+        <h3 style={{ marginTop: '0' }}>margareth sabate</h3>
 
         <p>
-          a 12-key piano circuit built on a breadboard using an NE555 timer chips. each button plays a 
+          a 12-key piano circuit built on a breadboard using an NE555 timer chips. each button plays a
           different musical note by switching resistor values to output different frequencies, 
           with a toggle switch that shifts the piano up or down an octave. 
           i calculated the resistor combinations for all 12 chromatic 
@@ -124,16 +124,16 @@ const projects = [
           i also tried adding a sound modulation feature to make the notes sound more robotic using 
           an AND gate, it was partially successful and a fun experiment to try :)
         </p>
-        <p>
+        <p className="p-center">
           heres the link for the report if you wanna try building it yourself :)))
         </p>
         <a href={pianoReport} target="_blank" rel="noreferrer">📄click here for the report</a>
 
-        <p style={{ marginTop: "30px", marginBottom: "0" }}>
-          here's some quick videos of the piano!
+        <p style={{ marginTop: "30px", marginBottom: "0" }} className="p-center">
+          here&apos;s some quick videos of the piano!
         </p>
-        <p style={{ marginTop: "0", color: "#888", fontSize: "11px" }}>
-          (keep in mind im using piezo buzzers so the sound isn't great, but still fun!!!)
+        <p style={{ marginTop: "0", color: "#888", fontSize: "12px" }} className="p-center">
+          (keep in mind i&apos;m using piezo buzzers so the sound isn&apos;t great, but still fun!!!)
         </p>
         <video 
           src={pianoVid1} 
@@ -206,8 +206,14 @@ function Projects() {
           onClick={handleClose}
         >✖</button>
         <span className="explorer-toolbar-divider" />
-        <span className="explorer-path">lykamargareth / projects {openId ? `/ ${openProject.name}` : ''}</span>
-        <span className="explorer-toolbar-right">🔍 search projects</span>
+
+        <span className="explorer-path">
+          lykamargareth / projects {openId ? `/ ${openProject.name}` : ''}
+        </span>
+
+        <span className="explorer-toolbar-right">
+          🔍 search projects
+        </span>
       </div>
 
       {/* column headers */}

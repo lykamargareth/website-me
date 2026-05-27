@@ -211,3 +211,19 @@
   line-height: 1.6;
   min-height: 0;
 }
+
+.projects-window p {
+  text-align: justify;
+  width: 70%;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+  white-space: pre-line; 
+}
+
+.projects-window h3 {
+  text-align: center;
+}
+
+.projects-window p.p-center {
+  text-align: center;
+}

@@ -9,6 +9,10 @@ html, body {
   cursor: default;
 }
 
+.p-center {
+  text-align: center;
+}
+
 /**** HOVER UNDERLINE EFFECT ****/
 .under-hover {
   transition: transform 100ms ease 0s;
